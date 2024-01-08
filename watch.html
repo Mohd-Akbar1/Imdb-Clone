@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fav List</title>
+    <link rel="stylesheet" href="watch.css">
+</head>
+
+<body>
+    <!-- header bar -->
+    <div class="header">
+        <a href="index.html">
+            <h3>Home</h3>
+        </a>
+        <H1 class="text">Favourites Page</H1>
+        <button id="clear" style="margin-right: 20px;">
+            <h3>Clear</h3>
+        </button>
+    </div>
+
+    <!-- displaying Favourites movies -->
+    <div id="main"></div>
+
+
+
+
+    
+
+    <!-- javascript -->
+
+    <script>
+        const imageBaseUrl = "https://image.tmdb.org/t/p/w300"
+
+        const main = document.getElementById('main')
+        const list = JSON.parse(localStorage.getItem('fav'))
+
+        function render() {
+            for (let i of list) {
+                fetch(`https://api.themoviedb.org/3/movie/${i}?&append_to_response=videos,images&api_key=f701dee9e048e65c574e8d80d6097eec`)
+                    .then(res => res.json())
+                    .then(movie => {
+                        const fav = document.createElement('div')
+                        fav.classList = 'fav-container'
+                        fav.innerHTML =
+                            `<div class="movie-card" >
+       
+       
+        
+                                <img src="${imageBaseUrl}${movie.poster_path}"  />
+                                    <div class="tag">
+                                        <p> ⭐ ${movie.vote_average}</p>
+                                         <button onclick=Delete(${movie.id})>&#10006</button> 
+          
+                                    </div>
+                                <h1  > ${movie.title}</h1>
+                            </div>`
+                        main.insertAdjacentElement('beforeend', fav)
+
+
+                    }
+                    )
+
+
+            }
+
+        }
+
+        render()
+
+        // clearing all favourit movies store in local storage
+
+        let clear = document.getElementById('clear')
+        clear.addEventListener('click', function () {
+            localStorage.clear()
+            location.reload();
+            console.log('cl')
+        })
+
+        // deleting individual favourite movie
+        function Delete(d) {
+            var num = d.toString()
+
+            var id = list.indexOf(num)
+            list.splice(id, 1)
+            console.log(list)
+            localStorage.setItem('fav', JSON.stringify(list))
+            location.reload();
+        }
+        Delete()
+    </script>
+</body>
+
+</html>
