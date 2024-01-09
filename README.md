@@ -1,13 +1,13 @@
 # IMDb Clone
 ## project link https://rainbow-piroshki-b319cc.netlify.app
--
+
 
 ## Tech used
 + HTML
 + CSS
 + Javascript
 
--
+
 
 ## features
 + users can search any movies name
