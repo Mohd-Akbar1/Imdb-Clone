@@ -1,8 +1,4 @@
-// function getMovieFromQueryParam() {
-//     var params = new URLSearchParams(window.location.search);
-//     const movie = JSON.parse(params.get("movie"));
-//     console.log(movie)
-// }
+
 const moviesGrid=document.getElementById('movies-grid')
 const imageBaseUrl="https://image.tmdb.org/t/p/w300"
 const query=window.location.search
