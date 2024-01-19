@@ -17,7 +17,16 @@
 + by clicking on movie name on card page will be redirect to new detail movie page
 
 # HomeScreen
-![Uploading imdb mainpage.png…]()
+![imdb mainpage](https://github.com/Mohd-Akbar1/Imdb-Clone/assets/146831190/5cf0d442-8363-4cbf-a3d9-180389c4c9d9)
+
+# Movie Detail Page
+![imdbDetailpage](https://github.com/Mohd-Akbar1/Imdb-Clone/assets/146831190/ee9c7d48-6483-4cf9-9a0a-841f41cb0104)
+
+# Favourite Page
+![localstorage](https://github.com/Mohd-Akbar1/Imdb-Clone/assets/146831190/2e07d61b-b4dd-4ea8-a79d-ef212bd1d672)
+
+
+
 
 
 
