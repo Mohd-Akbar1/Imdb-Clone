@@ -16,6 +16,9 @@
 + user can delete individual or all movies at a time
 + by clicking on movie name on card page will be redirect to new detail movie page
 
+# HomeScreen
+![Uploading imdb mainpage.png…]()
+
 
 
 
